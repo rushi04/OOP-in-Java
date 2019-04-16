@@ -1,0 +1,47 @@
+
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+
+public class LinkedListJunitTest {
+	
+	@Test
+	public void empty() {
+		LinkedList link = new LinkedList();
+		assertTrue(link.isEmpty());
+	}
+	
+	
+	@Test
+	public void empty2() {
+		LinkedList link = new LinkedList();
+		link.insertatlast(2);
+		assertFalse(link.isEmpty());
+		
+	}
+	
+	
+	@Test
+	public void testInsertatfront() {
+		LinkedList link = new LinkedList();
+		link.insertatlast(12);
+		assertEquals((Integer)89,(Integer)link.insertatlast(89));
+	}
+	
+	
+	
+	@Test
+	public void testremovefromback() {
+		LinkedList link = new LinkedList();
+		link.insertatfront(8);
+		link.insertatlast(9);
+		link.insertatfront(23);
+		link.insertatlast(12);
+		link.insertatfront(17);
+		assertEquals((Integer)link.getLast(),(Integer)link.remove_last());
+	}
+	
+}

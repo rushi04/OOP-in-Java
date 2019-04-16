@@ -1,0 +1,91 @@
+public class DOB {
+	private Integer day;
+	private Integer month;
+	private Integer year;
+	
+	public DOB()
+	{
+		this.day=0;
+		this.month=0;
+		this.year=0;
+	}
+	
+	
+	public DOB(Integer day,Integer month,Integer year)
+	{
+		this.day=day;
+		this.month=month;
+		this.year=year;	
+	}
+
+
+	public Integer getDay() {
+		return day;
+	}
+
+
+	public void setDay(Integer day) {
+		this.day = day;
+	}
+
+
+	public Integer getMonth() {
+		return month;
+	}
+
+
+	public void setMonth(Integer month) {
+		this.month = month;
+	}
+
+
+	public Integer getYear() {
+		return year;
+	}
+
+
+	public void setYear(Integer year) {
+		this.year = year;
+	}
+
+
+	@Override
+	public String toString() {
+		return "DOB [day=" + day + ", month=" + month + ", year=" + year + "]";
+	}
+
+
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DOB other = (DOB) obj;
+		if (day == null) {
+			if (other.day != null)
+				return false;
+		} else if (!day.equals(other.day))
+			return false;
+		if (month == null) {
+			if (other.month != null)
+				return false;
+		} else if (!month.equals(other.month))
+			return false;
+		if (year == null) {
+			if (other.year != null)
+				return false;
+		} else if (!year.equals(other.year))
+			return false;
+		return true;
+	}
+	
+	
+
+
+	
+	}

@@ -1,0 +1,175 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class StudentDataManagerJunitTest {
+
+	@Test
+	void findStudentByNameTest() {
+		Student [] sarray=new Student[3];
+		DOB d=new DOB(7,12,2007);
+		Address a=new Address("C98","s42","Indore","Madhya Pradesh",78001);
+		Course c1=new Course("maths","","","");
+		Course c2=new Course("english","","","");
+		Course [] c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		Student s1=new Student("James");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(360);
+		sarray[0]=s1;
+		
+		d=new DOB(15,4,2008);
+		a=new Address("C456","s35","Pune","Maharastra",49001);
+		c1=new Course("hindi","","","");
+		c2=new Course("english","","","");
+		c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		s1=new Student("David");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(320);
+		sarray[1]=s1;
+		
+		
+		d=new DOB(16,8,2007);
+		a=new Address("C90","s09","Nagpur","Maharastra",57001);
+		c1=new Course("maths","","","");
+		c2=new Course("science","","","");
+		c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		s1=new Student("Jhon");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(470);
+		sarray[2]=s1;
+		
+		
+		Student [] s2=new Student[1];
+		s2[0]=s1;
+		
+		assertArrayEquals(s2,StudentDataManager.findStudentByName(s1,sarray));
+		
+		
+	}
+	
+	
+	@Test
+	void findStudentsByDOBTest() {
+		Student [] sarray=new Student[3];
+		DOB d=new DOB(7,12,2007);
+		Address a=new Address("C98","s42","Indore","Madhya Pradesh",78001);
+		Course c1=new Course("maths","","","");
+		Course c2=new Course("english","","","");
+		Course [] c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		Student s1=new Student("James");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(360);
+		sarray[0]=s1;
+		
+		d=new DOB(15,4,2008);
+		a=new Address("C456","s35","Pune","Maharastra",49001);
+		c1=new Course("hindi","","","");
+		c2=new Course("english","","","");
+		c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		s1=new Student("David");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(320);
+		sarray[1]=s1;
+		
+		
+		d=new DOB(16,8,2007);
+		a=new Address("C90","s09","Nagpur","Maharastra",57001);
+		c1=new Course("maths","","","");
+		c2=new Course("science","","","");
+		c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		s1=new Student("Jhon");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(470);
+		sarray[2]=s1;
+		
+		
+		Student [] s2=new Student[1];
+		s2[0]=s1;
+		
+		assertArrayEquals(s2,StudentDataManager.findStudentsByDOB(d,sarray));
+		
+		
+	}
+	
+	
+	@Test
+	void sortStudentsByMarksTest() {
+		Student [] sarray=new Student[3];
+		Student [] s2=new Student[3];
+		DOB d=new DOB(7,12,2007);
+		Address a=new Address("C98","s42","Indore","Madhya Pradesh",78001);
+		Course c1=new Course("maths","","","");
+		Course c2=new Course("english","","","");
+		Course [] c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		Student s1=new Student("James");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(360);
+		sarray[0]=s1;
+		s2[1]=s1;
+		
+		d=new DOB(15,4,2008);
+		a=new Address("C456","s35","Pune","Maharastra",49001);
+		c1=new Course("hindi","","","");
+		c2=new Course("english","","","");
+		c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		s1=new Student("David");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(320);
+		sarray[1]=s1;
+		s2[0]=s1;
+		
+		
+		d=new DOB(16,8,2007);
+		a=new Address("C90","s09","Nagpur","Maharastra",57001);
+		c1=new Course("maths","","","");
+		c2=new Course("science","","","");
+		c=new Course[2];
+		c[0]=c1;
+		c[1]=c2;
+		s1=new Student("Jhon");
+		s1.setDob(d);
+		s1.setAddress(a);
+		s1.setCoursesEnrolled(c);
+		s1.setMarks(470);
+		sarray[2]=s1;
+		s2[2]=s1;
+		
+		assertArrayEquals(s2,StudentDataManager.sortStudentsByMarks(sarray));
+		
+		
+	}
+
+
+	}

@@ -1,0 +1,133 @@
+public class Address {
+	private String houseNo;
+	private String street;
+	private String city;
+	private String state;
+	private Integer pinCode;
+	
+	public Address(String houseNo, String street, String city, String state,
+			Integer pinCode) {
+		super();
+		this.houseNo = houseNo;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.pinCode = pinCode;
+	}
+	
+	
+	public Address() {
+		super();
+		this.houseNo =null;
+		this.street = null;
+		this.city = null;
+		this.state = null;
+		this.pinCode = 123456;
+	}
+
+	
+	
+	public String getHouseNo() {
+		return houseNo;
+	}
+	
+	
+	public void setHouseNo(String houseNo) {
+		this.houseNo = houseNo;
+	}
+	
+	
+	public String getStreet() {
+		return street;
+	}
+	
+	
+	public void setStreet(String street) {
+		this.street = street;
+	}
+	
+	
+	public String getCity() {
+		return city;
+	}
+	
+	
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
+	
+	public String getState() {
+		return state;
+	}
+	
+	
+	public void setState(String state) {
+		this.state = state;
+	}
+	
+	
+	public Integer getPinCode() {
+		return pinCode;
+	}
+	
+	
+	public void setPinCode(Integer pinCode) {
+		this.pinCode = pinCode;
+	}
+	
+	
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Address [houseNo=" + houseNo + ", street=" + street + ", city=" + city + ", state=" + state
+				+ ", pinCode=" + pinCode + "]";
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (houseNo == null) {
+			if (other.houseNo != null)
+				return false;
+		} else if (!houseNo.equals(other.houseNo))
+			return false;
+		if (pinCode == null) {
+			if (other.pinCode != null)
+				return false;
+		} else if (!pinCode.equals(other.pinCode))
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		if (street == null) {
+			if (other.street != null)
+				return false;
+		} else if (!street.equals(other.street))
+			return false;
+		return true;
+	}
+	
+	
+	
+	
+	
+	
+
+}

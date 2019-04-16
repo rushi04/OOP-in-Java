@@ -1,0 +1,78 @@
+
+	public class LinkedList {
+		Node start;
+		LinkedList(){
+			start=null;
+		}
+		 public Boolean isEmpty(){
+			 if(start==null)
+				 return true;
+			 else
+				 return false;
+		 }
+		 
+		 public Node getstart(){
+			 return start;
+		 }
+		
+	 public int insertatfront(int data){
+			 Node temp=new Node();
+			 temp.setData(data);
+			 temp.setNext(start);
+			 start=temp;
+			 return start.getData();
+		 }
+		
+	 public int insertatlast(int t){
+			 Node temp=new Node();
+			 temp.setData(t);
+			 if(start==null){
+				 start=temp;
+			 }
+			 else{
+				 Node move=new Node();
+				 move=start;
+				 while(move.getNext()!=null){
+					 move=move.getNext();
+					}
+				 move.setNext(temp);
+				 }
+			 return getLast();
+		 }
+		
+	public void printList(){
+			Node move=new Node();
+			move=start;
+			while(move!=null){
+				System.out.println(move.getData());
+				move=move.getNext();
+			}
+		}
+		
+		 public int getLast(){
+			Node last;
+			last=start;
+			while(last.getNext()!=null)
+				last=last.getNext();
+			return last.getData();
+		}
+		
+		 public int remove_last(){
+			 if(start==null){
+				 return -1; 
+			 }
+			 else{
+				 Node temp=new Node();
+				 temp=start;
+				 while(temp.getNext()!=null){
+					 temp=temp.getNext();
+				 }
+				 int t=temp.getData();
+				 temp=null;
+				 return t;
+			 }
+		 }
+		 
+	}
+
+

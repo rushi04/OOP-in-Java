@@ -1,0 +1,107 @@
+import java.util.Arrays;
+
+
+public class Student {
+	
+	private String studentName;
+	private DOB dob;
+	private Address address;
+	private Integer marks;
+	private Course[] coursesEnrolled;
+	
+	
+	public String getStudentName() {
+		return studentName;
+	}
+	
+	public Student(String studentName)
+	{
+		this.studentName = studentName;
+		
+	}
+
+	
+
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+
+	public DOB getDob() {
+		return dob;
+	}
+
+	public void setDob(DOB dob) {
+		this.dob = dob;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	public Integer getMarks() {
+		return marks;
+	}
+
+	public void setMarks(Integer marks) {
+		this.marks = marks;
+	}
+
+	public Course[] getCoursesEnrolled() {
+		return coursesEnrolled;
+	}
+
+	public void setCoursesEnrolled(Course[] coursesEnrolled) {
+		this.coursesEnrolled = coursesEnrolled;
+	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "Student [studentName=" + studentName + ", dob=" + dob + ", address=" + address + ", marks=" + marks
+				+ ", coursesEnrolled=" + Arrays.toString(coursesEnrolled) + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (!Arrays.equals(coursesEnrolled, other.coursesEnrolled))
+			return false;
+		if (dob == null) {
+			if (other.dob != null)
+				return false;
+		} else if (!dob.equals(other.dob))
+			return false;
+		if (marks == null) {
+			if (other.marks != null)
+				return false;
+		} else if (!marks.equals(other.marks))
+			return false;
+		if (studentName == null) {
+			if (other.studentName != null)
+				return false;
+		} else if (!studentName.equals(other.studentName))
+			return false;
+		return true;
+	}
+
+	
+
+	
+	
+}

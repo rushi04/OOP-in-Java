@@ -1,0 +1,89 @@
+
+public class StudentDataManager {
+	public static Student[] findStudentByName(Student s,Student[] sarray )
+	{
+		Student[] rname = new Student[100];
+		int i=0,count=0;
+		int j=0;
+		for(j=0;j<sarray.length;j++)
+		{
+			if(sarray[j].getStudentName().equals(s.getStudentName()))
+			{
+				rname[i++]=sarray[j];
+				count++;
+				
+			}
+		}
+		Student[] r=new Student[count];
+		for(j=0;j<count;j++)
+		{
+			r[j]=rname[j];
+		}
+		return r;
+	}
+	
+	
+	public static Student[] findStudentsByDOB(DOB dob,Student[] sarray){
+		Student[] rdob = new Student[100];
+		int j=0;
+		int count=0;
+		for(j=0;j<sarray.length;j++)
+		{
+			if(sarray[j].getDob().equals(dob))
+			{
+				rdob[count]=sarray[j];
+				count++;
+				
+				
+			}
+		}
+		Student[] r =new Student[count];
+		for(j=0;j<count;j++)
+		{
+			r[j]=rdob[j];
+		}
+		
+		return r;
+					
+	}
+	
+	public static Student[] sortStudentsByMarks(Student[] sarray){
+		int i=0;
+		int j=0;
+		
+		for(i=0;i<sarray.length;i++){
+			for(j=i;j<sarray.length;j++){
+				if(sarray[i].getMarks()>sarray[j].getMarks()){
+					Student d=sarray[i];
+					sarray[i]=sarray[j];
+					sarray[j]=d;
+				}
+			}
+		}
+		return sarray;
+	}
+	
+	
+	public static Student [] getRollList(Course c,Student [] array){
+		int i=0,count=0,x=0;
+		Student [] b = new Student[20];
+		for(i=0;i<array.length;i++){
+			Course [] a = array[i].getCoursesEnrolled();
+			for(int j=0;j<a.length;j++){
+				if(a[j].getCourseName().equals(c.getCourseName())){
+					b[x++]=array[i];
+					count++;
+				}
+			}
+		}
+		Student [] r = new Student[count];
+		for( x=0;x<count;x++)
+		{
+			r[x]=b[x];
+		}
+		return r ;
+	}
+
+	
+
+}
